@@ -7,25 +7,28 @@
   <div>
     <tr>
       <td class="headings"><label for="">First name :</label></td>
-      <td class="inputs"><input name='firstname' type="text" [(ngModel)]="firstname"></td>
+      <td class="inputs"><input name='firstname' type="text" [(ngModel)]="person.firstname"></td>
     </tr>    
   
     <tr>
       <td class="headings"><label for="">Last Name:</label></td>
-      <td><input type="text" name="lastName" [(ngModel)]="lastname"></td> 
+      <td><input type="text" name="lastName" [(ngModel)]="person.lastname"></td> 
    </tr> 
    <tr>
       <td class="headings"><label for="">Gender:</label></td>
-      <td><input type="radio" name="male" [value]="male"  >Male</td> 
-      <td><input type="radio" name="female" [value]="female">Female</td> 
+      <td><input type="radio" name="person.gender" value="male" [(ngModel)]='person.gender'> Male<br>
+        <input type="radio" name="person.gender" value="female" [(ngModel)]='person.gender'> Female<br>
+        <input type="radio" name="person.gender" value="other" [(ngModel)]='person.gender'> Other</td> 
    </tr>  
    <tr>
       <td class="headings"><label for="">Language spoken:</label></td>
-      <td><input type="checkbox" name="eng" [(ngModel)]="eng" >English <br/>
-      <input type="checkbox" name="fr" [(ngModel)]="fr">French</td> 
+      <td><input type="checkbox" name="eng" [(ngModel)]="eng" (change)='onCheck($event)' >English <br/>
+      <input type="checkbox" name="fr" [(ngModel)]="fr" (change)='onCheck($event)'>French</td> 
+      <td><input type="checkbox" name="frs" value="frs" [(ngModel)]="others" (change)='onCheck($event)'>Others</td> 
    </tr>
   <button  (click)="submitted()">Submit Data</button>
   </div>
 </form>
 
-<div>User has typed :{{dataInput}}</div>
+<div>User has typed :{{person | json}} <br> selected {{gender}} <br>
+Checkbox selected => {{checkedVal | json}}</div>
