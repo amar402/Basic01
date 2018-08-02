@@ -1,0 +1,31 @@
+<div>
+  <p>I am an Angular {{title}} with version {{version}}<br>  
+  </p>
+  
+</div>
+<form action="">
+  <div>
+    <tr>
+      <td class="headings"><label for="">First name :</label></td>
+      <td class="inputs"><input name='firstname' type="text" [(ngModel)]="firstname"></td>
+    </tr>    
+  
+    <tr>
+      <td class="headings"><label for="">Last Name:</label></td>
+      <td><input type="text" name="lastName" [(ngModel)]="lastname"></td> 
+   </tr> 
+   <tr>
+      <td class="headings"><label for="">Gender:</label></td>
+      <td><input type="radio" name="male" [value]="male"  >Male</td> 
+      <td><input type="radio" name="female" [value]="female">Female</td> 
+   </tr>  
+   <tr>
+      <td class="headings"><label for="">Language spoken:</label></td>
+      <td><input type="checkbox" name="eng" [(ngModel)]="eng" >English <br/>
+      <input type="checkbox" name="fr" [(ngModel)]="fr">French</td> 
+   </tr>
+  <button  (click)="submitted()">Submit Data</button>
+  </div>
+</form>
+
+<div>User has typed :{{dataInput}}</div>
