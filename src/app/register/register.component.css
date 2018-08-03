@@ -18,3 +18,7 @@ tbody,tr,td{
       font-family: 'Courier New', Courier, monospace;
       font-weight: bolder;     
 }
+button{
+        display: block;
+        margin: 0 auto;
+}

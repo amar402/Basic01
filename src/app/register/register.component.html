@@ -2,6 +2,7 @@
 
 <form action="">
   <div>
+      <tbody>
     <tr>
       <td class="headings"><label for="">First name :</label></td>
       <td class="inputs"><input name='firstname' type="text" [(ngModel)]="person.firstname"></td>
@@ -23,6 +24,7 @@
       <input type="checkbox" name="fr" [(ngModel)]="fr" (change)='onCheck($event)'>French</td> 
       <td><input type="checkbox" name="frs" value="frs" [(ngModel)]="others" (change)='onCheck($event)'>Others</td> 
    </tr>
+   </tbody>
   <button  (click)="submitted()">Submit Data</button>
   </div>
 </form>

@@ -8,15 +8,13 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { RecordComponent } from './record/record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-
+import {UserDataService} from './shared/user-data.service'
 
 const appRoutes : Routes =[ 
   {path:'register' , component:RegisterComponent},
   {path:'records', component : RecordComponent},
   {path:'home', component : HomeComponent},
-  { path: '**', component: WelcomeComponent }
-
-  
+  { path: '**', component: WelcomeComponent }  
 ];
 
 
@@ -27,13 +25,14 @@ const appRoutes : Routes =[
     HomeComponent,
     RecordComponent,
     WelcomeComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

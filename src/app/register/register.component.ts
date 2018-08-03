@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../shared/user-data.service';
 
 @Component({
   selector: 'app-register',
@@ -27,8 +28,10 @@ export class RegisterComponent implements OnInit {
       this.checkedVal.splice(i,1)     
     }
     this.person.Langauages = this.checkedVal;
+    this.userdata = this.person;
+    console.log(JSON.stringify(this.userdata) + 'firing from check function');
   }
-  constructor() { }
+  constructor(private userdata:UserDataService) { }
 
   ngOnInit() {
   }
