@@ -1,0 +1,20 @@
+form{
+        margin: 10px auto;
+        border: 2px solid darkgrey;
+}
+p{   background: burlywood;
+     text-align: center
+        
+}
+div{
+        margin: 1% ;
+        color:blue
+}
+tbody,tr,td{
+        width:30%;
+        padding: 0.5% 0;
+}
+.headings{      
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bolder;     
+}

@@ -1,34 +1,25 @@
-<div>
-  <p>I am an Angular {{title}} with version {{version}}<br>  
-  </p>
-  
-</div>
-<form action="">
-  <div>
-    <tr>
-      <td class="headings"><label for="">First name :</label></td>
-      <td class="inputs"><input name='firstname' type="text" [(ngModel)]="person.firstname"></td>
-    </tr>    
-  
-    <tr>
-      <td class="headings"><label for="">Last Name:</label></td>
-      <td><input type="text" name="lastName" [(ngModel)]="person.lastname"></td> 
-   </tr> 
-   <tr>
-      <td class="headings"><label for="">Gender:</label></td>
-      <td><input type="radio" name="person.gender" value="male" [(ngModel)]='person.gender'> Male<br>
-        <input type="radio" name="person.gender" value="female" [(ngModel)]='person.gender'> Female<br>
-        <input type="radio" name="person.gender" value="other" [(ngModel)]='person.gender'> Other</td> 
-   </tr>  
-   <tr>
-      <td class="headings"><label for="">Language spoken:</label></td>
-      <td><input type="checkbox" name="eng" [(ngModel)]="eng" (change)='onCheck($event)' >English <br/>
-      <input type="checkbox" name="fr" [(ngModel)]="fr" (change)='onCheck($event)'>French</td> 
-      <td><input type="checkbox" name="frs" value="frs" [(ngModel)]="others" (change)='onCheck($event)'>Others</td> 
-   </tr>
-  <button  (click)="submitted()">Submit Data</button>
-  </div>
-</form>
+<header style="text-align: center;background-color:aqua">Welcome to Angular 6 Basic 01 APP</header>
+<div class="wrapper">
 
-<div>User has typed :{{person | json}} <br> selected {{gender}} <br>
-Checkbox selected => {{checkedVal | json}}</div>
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Bootstrap Sidebar</h3>
+  </div>
+  <ul>
+    <li (click)="gotoHome()">Home</li>
+    <li (click)="gotoRegister()">Register</li>
+    <li (click)="gotoRecords()">Show List</li>    
+  </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div id="content">
+      <!-- We'll fill this with dummy content -->
+      <p>
+        <router-outlet></router-outlet>
+      </p>
+  </div>
+
+</div> 
+<footer style="position: relative;bottom: 0px;text-align: center;background: black;color:white;">&copy; 2018</footer>
